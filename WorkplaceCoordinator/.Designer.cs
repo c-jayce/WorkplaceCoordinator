@@ -205,9 +205,10 @@
             // 
             // btnSECEdit
             // 
-            this.btnSECEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
+            this.btnSECEdit.BackColor = System.Drawing.Color.Silver;
             this.btnSECEdit.FlatAppearance.BorderSize = 0;
             this.btnSECEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSECEdit.ForeColor = System.Drawing.Color.Black;
             this.btnSECEdit.Location = new System.Drawing.Point(380, 89);
             this.btnSECEdit.Name = "btnSECEdit";
             this.btnSECEdit.Size = new System.Drawing.Size(75, 23);

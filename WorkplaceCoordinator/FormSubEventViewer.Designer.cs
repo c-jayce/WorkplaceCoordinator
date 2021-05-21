@@ -266,9 +266,10 @@
             // 
             this.btnCAARefreshList.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnCAARefreshList.AutoSize = true;
-            this.btnCAARefreshList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
+            this.btnCAARefreshList.BackColor = System.Drawing.Color.Silver;
             this.btnCAARefreshList.FlatAppearance.BorderSize = 0;
             this.btnCAARefreshList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCAARefreshList.ForeColor = System.Drawing.Color.Black;
             this.btnCAARefreshList.Location = new System.Drawing.Point(258, 71);
             this.btnCAARefreshList.Margin = new System.Windows.Forms.Padding(0);
             this.btnCAARefreshList.Name = "btnCAARefreshList";
@@ -294,10 +295,11 @@
             // btnSaveAttendeesList
             // 
             this.btnSaveAttendeesList.AutoSize = true;
-            this.btnSaveAttendeesList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
+            this.btnSaveAttendeesList.BackColor = System.Drawing.Color.Silver;
             this.btnSaveAttendeesList.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSaveAttendeesList.FlatAppearance.BorderSize = 0;
             this.btnSaveAttendeesList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveAttendeesList.ForeColor = System.Drawing.Color.Black;
             this.btnSaveAttendeesList.Location = new System.Drawing.Point(258, 0);
             this.btnSaveAttendeesList.Margin = new System.Windows.Forms.Padding(0);
             this.btnSaveAttendeesList.Name = "btnSaveAttendeesList";
@@ -311,10 +313,11 @@
             // btnBackToSelectAttendees
             // 
             this.btnBackToSelectAttendees.AutoSize = true;
-            this.btnBackToSelectAttendees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
+            this.btnBackToSelectAttendees.BackColor = System.Drawing.Color.Silver;
             this.btnBackToSelectAttendees.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnBackToSelectAttendees.FlatAppearance.BorderSize = 0;
             this.btnBackToSelectAttendees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackToSelectAttendees.ForeColor = System.Drawing.Color.Black;
             this.btnBackToSelectAttendees.Location = new System.Drawing.Point(0, 0);
             this.btnBackToSelectAttendees.Margin = new System.Windows.Forms.Padding(0);
             this.btnBackToSelectAttendees.Name = "btnBackToSelectAttendees";
@@ -498,9 +501,10 @@
             // 
             // btnAddRemoveAttendees
             // 
-            this.btnAddRemoveAttendees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
+            this.btnAddRemoveAttendees.BackColor = System.Drawing.Color.Silver;
             this.btnAddRemoveAttendees.FlatAppearance.BorderSize = 0;
             this.btnAddRemoveAttendees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRemoveAttendees.ForeColor = System.Drawing.Color.Black;
             this.btnAddRemoveAttendees.Location = new System.Drawing.Point(53, 413);
             this.btnAddRemoveAttendees.Name = "btnAddRemoveAttendees";
             this.btnAddRemoveAttendees.Size = new System.Drawing.Size(169, 23);
@@ -512,9 +516,10 @@
             // 
             // btnViewAttendees
             // 
-            this.btnViewAttendees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(55)))), ((int)(((byte)(58)))));
+            this.btnViewAttendees.BackColor = System.Drawing.Color.Silver;
             this.btnViewAttendees.FlatAppearance.BorderSize = 0;
             this.btnViewAttendees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewAttendees.ForeColor = System.Drawing.Color.Black;
             this.btnViewAttendees.Location = new System.Drawing.Point(53, 384);
             this.btnViewAttendees.Name = "btnViewAttendees";
             this.btnViewAttendees.Size = new System.Drawing.Size(169, 23);

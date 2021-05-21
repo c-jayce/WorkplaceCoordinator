@@ -168,10 +168,11 @@
             // 
             // btnLFRegisterConfirm
             // 
-            this.btnLFRegisterConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.btnLFRegisterConfirm.BackColor = System.Drawing.Color.Silver;
             this.btnLFRegisterConfirm.FlatAppearance.BorderSize = 0;
             this.btnLFRegisterConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLFRegisterConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLFRegisterConfirm.ForeColor = System.Drawing.Color.Black;
             this.btnLFRegisterConfirm.Location = new System.Drawing.Point(462, 65);
             this.btnLFRegisterConfirm.Name = "btnLFRegisterConfirm";
             this.btnLFRegisterConfirm.Size = new System.Drawing.Size(75, 23);
@@ -183,10 +184,11 @@
             // 
             // btnLFLoginConfirm
             // 
-            this.btnLFLoginConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.btnLFLoginConfirm.BackColor = System.Drawing.Color.Silver;
             this.btnLFLoginConfirm.FlatAppearance.BorderSize = 0;
             this.btnLFLoginConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLFLoginConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLFLoginConfirm.ForeColor = System.Drawing.Color.Black;
             this.btnLFLoginConfirm.Location = new System.Drawing.Point(462, 34);
             this.btnLFLoginConfirm.Name = "btnLFLoginConfirm";
             this.btnLFLoginConfirm.Size = new System.Drawing.Size(75, 23);
@@ -208,10 +210,11 @@
             // 
             // btnLFAccountRecoveryConfirm
             // 
-            this.btnLFAccountRecoveryConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.btnLFAccountRecoveryConfirm.BackColor = System.Drawing.Color.Silver;
             this.btnLFAccountRecoveryConfirm.FlatAppearance.BorderSize = 0;
             this.btnLFAccountRecoveryConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLFAccountRecoveryConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLFAccountRecoveryConfirm.ForeColor = System.Drawing.Color.Black;
             this.btnLFAccountRecoveryConfirm.Location = new System.Drawing.Point(462, 3);
             this.btnLFAccountRecoveryConfirm.Name = "btnLFAccountRecoveryConfirm";
             this.btnLFAccountRecoveryConfirm.Size = new System.Drawing.Size(75, 23);
