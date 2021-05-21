@@ -10,6 +10,8 @@ using Renci.SshNet.Security.Cryptography;
 using System.Globalization;
 using Org.BouncyCastle.Asn1.Cms;
 using CSC_834__Individual_Project;
+//
+using System.Configuration;
 
 namespace WorkplaceCoordinator
 {
@@ -58,10 +60,7 @@ namespace WorkplaceCoordinator
 
             //prepare an SQL query to retrieve all the users in DB  //*EXCLUDING userID=1 AND userID=2 because that is SYSTEM & ADMIN
             DataTable myTable = new DataTable();
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -109,10 +108,7 @@ namespace WorkplaceCoordinator
 
                 //prepare an SQL query to retrieve all the users in DB  //*EXCLUDING userID=1 AND userID=2 because that is SYSTEM & ADMIN
                 DataTable myTable = new DataTable();
-                //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-                //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-                string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-                MySqlConnection conn = new MySqlConnection(connStr);
+                MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
                 try
                 {
                     Console.WriteLine("Connecting to MySQL...");
@@ -159,10 +155,7 @@ namespace WorkplaceCoordinator
 
             //prepare an SQL query to retrieve all the users in DB  //*EXCLUDING userID=1 AND userID=2 because that is SYSTEM & ADMIN
             DataTable myTable = new DataTable();
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -228,10 +221,7 @@ namespace WorkplaceCoordinator
 
             //prepare an SQL query to retrieve all the users in DB  //*EXCLUDING userID=1 AND userID=2 because that is SYSTEM & ADMIN
             DataTable myTable = new DataTable();
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -269,10 +259,7 @@ namespace WorkplaceCoordinator
             ArrayList attendeeEventList = new ArrayList();  //a list to save the events
             //prepare an SQL query to retrieve all the events on the same, specified date
             DataTable myTable = new DataTable();
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -317,10 +304,7 @@ namespace WorkplaceCoordinator
         public static void updateAttendees(int eventID, String attendeeIDList)
         {
             //Send SQL Query
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -403,7 +387,6 @@ namespace WorkplaceCoordinator
 
             return new TimeSpan(0, totalMinutes - totalMinutes % minutes, 0);
         }*/
-
-
     }
 }
+

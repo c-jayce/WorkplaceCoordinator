@@ -9,6 +9,8 @@ using MySql.Data.MySqlClient;
 using Renci.SshNet.Security.Cryptography;
 using System.Globalization;
 using Org.BouncyCastle.Asn1.Cms;
+//
+using System.Configuration;
 
 namespace CSC_834__Individual_Project
 {
@@ -18,7 +20,6 @@ namespace CSC_834__Individual_Project
 
         //[User Vars]
         int userID = -1;
-
 
         //[Event Vars]
         int eventID;
@@ -89,10 +90,7 @@ namespace CSC_834__Individual_Project
             ArrayList eventList = new ArrayList();  //a list to save the events
             //prepare an SQL query to retrieve all the events on the same, specified date
             DataTable myTable = new DataTable();
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -139,10 +137,7 @@ namespace CSC_834__Individual_Project
             ArrayList eventList = new ArrayList();  //a list to save the events
             //prepare an SQL query to retrieve all the events on the same, specified date
             DataTable myTable = new DataTable();
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -300,10 +295,7 @@ namespace CSC_834__Individual_Project
             //Console.WriteLine(reminderTimeParsed);
 
             //Send SQL Query
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -347,10 +339,7 @@ namespace CSC_834__Individual_Project
             //Console.WriteLine(reminderTimeParsed);
 
             //Send SQL Query
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -494,10 +483,7 @@ namespace CSC_834__Individual_Project
             //Console.WriteLine(reminderTimeParsed);
 
             //Send SQL Query
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -526,3 +512,4 @@ namespace CSC_834__Individual_Project
 
     }
 }
+

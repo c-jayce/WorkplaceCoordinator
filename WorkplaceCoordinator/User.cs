@@ -8,12 +8,13 @@ using System.Collections;
 using System.Data;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
+//
+using System.Configuration;
 
 namespace CSC_834__Individual_Project
 {
     class User
     {
-
         //[User Vars]
         Boolean isLoggedIn = false;
         int userID = -1;
@@ -73,10 +74,7 @@ namespace CSC_834__Individual_Project
             //Console.WriteLine("confirmPassword: " + confirmPassword);
 
             //Send SQL Query
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 //SEE IF EMAIL EXISTS IN DB ALREADY
@@ -175,10 +173,7 @@ namespace CSC_834__Individual_Project
             //Console.WriteLine("confirmPassword: " + confirmPassword);
 
             //Send SQL Query
-            //string connStr = "server=csdatabase.eku.edu;user=stu_csc340;database=csc340_db;port=3306;password=Colonels18;";
-            //string connStr = "server=127.0.0.1;user=root;database=corona;port=3306;password=;";
-            string connStr = "server=157.89.28.130;user=ChangK;database=csc340;port=3306;password=Wallace#409;";
-            MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(connStr);
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["_db"].ConnectionString);
             try
             {
                 Console.WriteLine("Connecting to MySQL...");
@@ -239,38 +234,10 @@ namespace CSC_834__Individual_Project
             conn.Close();
             Console.WriteLine("Done.");
 
-
-
-
-
             isLoggedIn = true;
             return true;
-
-
         }
 
-
-
-
-
-
-
-
-
-
-
-        /*
-        int userID = 1;
-
-        String email;
-        String firstName;
-        String lastName;
-
-        String username;
-        String password;
-        String confirmPassword;
-        String role;
-        */
 
         public Boolean getLoginStatus()
         {
@@ -292,20 +259,6 @@ namespace CSC_834__Individual_Project
         {
             return username;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
+
