@@ -49,7 +49,7 @@ namespace CSC_834__Individual_Project
         }
 
         //Constructor for [addEvent][deleteEvent]
-        public Event(int _userID, string _dateParsed, string _title, string _startTimeParsed, string _endTimeParsed, string _location, string _description, string _reminderTimeParsed, string _attendeeIDList)
+        public Event(int _userID, string _dateParsed, string _title, string _startTimeParsed, string _endTimeParsed, string _location, string _description, string _reminderTimeParsed, string _attendeeIDList, int _isManagerEvent)
         {
             userID = _userID;
             dateParsed = _dateParsed;
@@ -62,10 +62,11 @@ namespace CSC_834__Individual_Project
             reminderTimeParsed = convertStringToTimeSpanFormat(_reminderTimeParsed);
 
             attendeeIDListString = _attendeeIDList;
+            isManagerEvent = _isManagerEvent;
         }
 
         //Constructor for [editEvent]
-        public Event(int _userID, int _eventID, string _dateParsed, string _title, string _startTimeParsed, string _endTimeParsed, string _location, string _description, string _reminderTimeParsed, string _attendeeIDList)
+        public Event(int _userID, int _eventID, string _dateParsed, string _title, string _startTimeParsed, string _endTimeParsed, string _location, string _description, string _reminderTimeParsed, string _attendeeIDList, int _isManagerEvent)
         {
             userID = _userID;
             eventID = _eventID;
@@ -79,6 +80,8 @@ namespace CSC_834__Individual_Project
             reminderTimeParsed = convertStringToTimeSpanFormat(_reminderTimeParsed);
 
             attendeeIDListString = _attendeeIDList;
+
+            isManagerEvent = _isManagerEvent;
         }
 
         //GET EVENT LIST FROM DB
@@ -301,7 +304,8 @@ namespace CSC_834__Individual_Project
                 Console.WriteLine("Connecting to MySQL...");
                 conn.Open();
                 //add/alter code for user ID after coding functional login
-                string sql = "INSERT INTO z_corona_event (userID, date, title, startTime, endTime, location, description, reminderTime, attendees) VALUES (@userID, @dateParsed, @title, @startTimeParsed, @endTimeParsed, @location, @description, @reminderTimeParsed, @attendeeIDListString)";
+                //string sql = "INSERT INTO z_corona_event (userID, date, title, startTime, endTime, location, description, reminderTime, attendees) VALUES (@userID, @dateParsed, @title, @startTimeParsed, @endTimeParsed, @location, @description, @reminderTimeParsed, @attendeeIDListString)";
+                string sql = "INSERT INTO z_corona_event (userID, date, title, startTime, endTime, location, description, reminderTime, attendees, isManagerEvent) VALUES (@userID, @dateParsed, @title, @startTimeParsed, @endTimeParsed, @location, @description, @reminderTimeParsed, @attendeeIDListString, @isManagerEvent)";
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@userID", userID);
                 cmd.Parameters.AddWithValue("@dateParsed", dateParsed);
@@ -313,6 +317,7 @@ namespace CSC_834__Individual_Project
                 cmd.Parameters.AddWithValue("@reminderTimeParsed", reminderTimeParsed);
 
                 cmd.Parameters.AddWithValue("@attendeeIDListString", attendeeIDListString);
+                cmd.Parameters.AddWithValue("@isManagerEvent", isManagerEvent);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -345,7 +350,8 @@ namespace CSC_834__Individual_Project
                 Console.WriteLine("Connecting to MySQL...");
                 conn.Open();
                 //add/alter code for user ID after coding functional login
-                string sql = "UPDATE z_corona_event SET userID=@userID, title=@title, startTime=@startTimeParsed, endTime=@endTimeParsed, location=@location, description=@description, reminderTime=@reminderTimeParsed, attendees=@attendeeIDListString WHERE eventID=@eventID";
+                //string sql = "UPDATE z_corona_event SET userID=@userID, title=@title, startTime=@startTimeParsed, endTime=@endTimeParsed, location=@location, description=@description, reminderTime=@reminderTimeParsed, attendees=@attendeeIDListString WHERE eventID=@eventID";
+                string sql = "UPDATE z_corona_event SET userID=@userID, title=@title, startTime=@startTimeParsed, endTime=@endTimeParsed, location=@location, description=@description, reminderTime=@reminderTimeParsed, attendees=@attendeeIDListString, isManagerEvent=@isManagerEvent WHERE eventID=@eventID";
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@userID", userID);
                 cmd.Parameters.AddWithValue("@eventID", eventID);
@@ -358,6 +364,7 @@ namespace CSC_834__Individual_Project
                 cmd.Parameters.AddWithValue("@reminderTimeParsed", reminderTimeParsed);
 
                 cmd.Parameters.AddWithValue("@attendeeIDListString", attendeeIDListString);
+                cmd.Parameters.AddWithValue("@isManagerEvent", isManagerEvent);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -509,7 +516,6 @@ namespace CSC_834__Individual_Project
             Console.WriteLine("Done.");
         }
         #endregion
-
     }
 }
 

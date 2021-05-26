@@ -384,7 +384,11 @@ namespace CSC_834__Individual_Project
 
         private void btnManagerEditEvent_Click(object sender, EventArgs e)
         {
-            resetIsAddingEventManager();
+            //FLAG FOR IF MANAGER IS UPDATING EVENT;
+            isAddingEventManager = true;
+            subEventViewer.updateIsAddingEventManager(isAddingEventManager);
+
+            //resetIsAddingEventManager();
             //RESET THIS VARIABLE
             subEventViewer.resetAttendeeIDListString();
 

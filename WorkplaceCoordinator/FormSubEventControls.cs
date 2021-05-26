@@ -38,11 +38,20 @@ namespace CSC_834__Individual_Project
 
         //ManagerEvent Attendees
         String attendeeIDListString = null;  //FOR GETTING LIST OF IDS TO UPDATE
+        Boolean isAddingEventManager = false;  //FLAG FOR IF MANAGER IS ADDING EVENT...
+
+        //[MANAGEREVENT]
+        int isManagerEvent;
 
         //[SubEventControls] - CONSTRUCTOR
         public FormSubEventControls()
         {
             InitializeComponent();
+        }
+
+        public void updateIsAddingEventManager(Boolean status)
+        {
+            isAddingEventManager = status;
         }
 
         public void resetAttendeeIDListString()
@@ -242,8 +251,19 @@ namespace CSC_834__Individual_Project
             parentForm.passAttendeeIDListString();
             //attendeeIDListString = parentForm.passAttendeeIDListString();
 
-            Event newEvent = new Event(userID, dateParsed, title, startTimeParsed, endTimeParsed, location, description, reminderTimeParsed, attendeeIDListString);
-            newEvent.addEvent();
+            if (isAddingEventManager == true)
+            {
+                Event newEvent = new Event(userID, dateParsed, title, startTimeParsed, endTimeParsed, location, description, reminderTimeParsed, attendeeIDListString, 1);
+                newEvent.addEvent();
+                Console.WriteLine("--[[Manager Event Added]]--");
+            }
+            else
+            {
+                Event newEvent = new Event(userID, dateParsed, title, startTimeParsed, endTimeParsed, location, description, reminderTimeParsed, attendeeIDListString, 0);
+                newEvent.addEvent();
+                Console.WriteLine("--[[Normal Event Added]]--");
+            }
+            //newEvent.addEvent();
 
             parentForm.updateEventList(sender);  //Call FormSubEventViewer.updateEventList which calls 'monthCalendar1_DateChanged()'
             parentForm.hideSubEventControlsAddEdit();
@@ -382,9 +402,23 @@ namespace CSC_834__Individual_Project
             //Console.WriteLine("\n\n\n\nEVENTID" + eventID + "\n\n\n");  //returns correct eventID
             parentForm.passAttendeeIDListString();
 
+            //vv Before adding ability to edit normal events to manager events...
+            //Event changeEvent = new Event(userID, eventID, dateParsed, title, startTimeParsed, endTimeParsed, location, description, reminderTimeParsed, attendeeIDListString, isManagerEvent);
+            //changeEvent.editEvent();
 
-            Event changeEvent = new Event(userID, eventID, dateParsed, title, startTimeParsed, endTimeParsed, location, description, reminderTimeParsed, attendeeIDListString);
-            changeEvent.editEvent();
+            if (isAddingEventManager == true)
+            {
+                Event changeEvent = new Event(userID, eventID, dateParsed, title, startTimeParsed, endTimeParsed, location, description, reminderTimeParsed, attendeeIDListString, 1);
+                changeEvent.editEvent();
+                Console.WriteLine("--[[Manager Event Edited // Normal Event Elevated]]--");
+            }
+            else
+            {
+                Event changeEvent = new Event(userID, eventID, dateParsed, title, startTimeParsed, endTimeParsed, location, description, reminderTimeParsed, attendeeIDListString, 0);
+                changeEvent.editEvent();
+                Console.WriteLine("--[[Normal Event Edited]]--");
+            }
+
 
             parentForm.updateEventList(sender);  //Call FormSubEventViewer.updateEventList which calls 'monthCalendar1_DateChanged()'
             parentForm.hideSubEventControlsAddEdit();
@@ -392,6 +426,6 @@ namespace CSC_834__Individual_Project
             parentForm.resetAttendeeIDListString();
             //resetAttendeeIDListString();
         }
-
     }
 }
+

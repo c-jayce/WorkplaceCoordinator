@@ -310,7 +310,8 @@ namespace WorkplaceCoordinator
                 Console.WriteLine("Connecting to MySQL...");
                 conn.Open();
                 //add/alter code for user ID after coding functional login
-                string sql = "UPDATE z_corona_event SET attendees=@attendeeIDList WHERE eventID=@eventID";
+                //string sql = "UPDATE z_corona_event SET attendees=@attendeeIDList WHERE eventID=@eventID";
+                string sql = "UPDATE z_corona_event SET attendees=@attendeeIDList, isManagerEvent=1 WHERE eventID=@eventID";
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@eventID", eventID);
                 cmd.Parameters.AddWithValue("@attendeeIDList", attendeeIDList);

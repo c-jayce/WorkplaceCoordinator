@@ -73,6 +73,7 @@ namespace CSC_834__Individual_Project
         public void updateIsAddingEventManager(Boolean status)
         {
             isAddingEventManager = status;
+            subEventControls.updateIsAddingEventManager(status);
         }
 
         //AGGREGATION SECTION
@@ -147,7 +148,7 @@ namespace CSC_834__Individual_Project
                             reminderTimeParsed = checkedEvents.getReminderTime();
                             attendeeIDListString = attendeeIDListString;
 
-                            Event delEvent = new Event(userID, dateParsed, title, startTimeParsed, endTimeParsed, location, description, reminderTimeParsed, attendeeIDListString);
+                            Event delEvent = new Event(userID, dateParsed, title, startTimeParsed, endTimeParsed, location, description, reminderTimeParsed, attendeeIDListString, isManagerEvent);
                             delEvent.deleteEvent();
                         }
                     }
@@ -1104,7 +1105,9 @@ namespace CSC_834__Individual_Project
             ManagerEvent.updateAttendees(eventID, attendeeIDListString);
 
 
-
+            //subEventControls.btnSECAdd_Click(sender, e);
+            hidePanelViewEditAttendeesManager();
+            hidePanelCheckAvailabilityAttendees();
 
 
         }
