@@ -3,6 +3,15 @@ Workplace Meeting Coordinator and Calendar (C#)
 
 This project was created for educational purposes utilizing principles of software engineering to design and implement a software system with self-taught c#.
 
+Test Employee (Standard User):  
+Username: johnd  
+Password: 123  
+(John Doe)  
+
+Test Manager:  
+Username: manager  
+Password: 123  
+
 <br/>
 <br/>
 
